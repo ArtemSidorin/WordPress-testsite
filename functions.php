@@ -76,9 +76,15 @@ function artbt_style() {
 }
 add_action( 'wp_enqueue_scripts', 'artbt_style');
 
+<<<<<<< HEAD
 
 
 
+=======
+
+
+
+>>>>>>> origin/master
 function artbt_scripts() {
 	wp_enqueue_script( 'scripts', get_template_directory_uri() . '/js/script.js', array ('jquery'), '', true );
 
