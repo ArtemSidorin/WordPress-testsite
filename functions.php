@@ -1,5 +1,20 @@
 <?php
 
+
+/**
+ * Required: set 'ot_theme_mode' filter to true.
+ */
+add_filter( 'ot_theme_mode', '__return_true' );
+add_filter( 'ot_show_new_layout', '__return_false' );
+add_filter( 'ot_show_pages', '__return_false' );
+
+/**
+ * Required: include OptionTree.
+ */
+require( trailingslashit( get_template_directory() ) . 'option-tree/ot-loader.php' );
+
+
+
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
 	define( '_S_VERSION', '1.0.0' );
@@ -75,26 +90,3 @@ function artbt_style() {
 	wp_enqueue_style( 'carousel', get_template_directory_uri() . '/css/owl-carousel.css');
 }
 add_action( 'wp_enqueue_scripts', 'artbt_style');
-
-<<<<<<< HEAD
-
-
-
-=======
-
-
-
->>>>>>> origin/master
-function artbt_scripts() {
-	wp_enqueue_script( 'scripts', get_template_directory_uri() . '/js/script.js', array ('jquery'), '', true );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
-}
-add_action( 'wp_enqueue_scripts', 'artbt_scripts' );
-
-
-if ( defined( 'JETPACK__VERSION' ) ) {
-	require get_template_directory() . '/inc/jetpack.php';
-}
