@@ -22,40 +22,54 @@
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'artbt' ); ?></a>
-
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$artbt_description = get_bloginfo( 'description', 'display' );
-			if ( $artbt_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $artbt_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
-
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'artbt' ); ?></button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
-
-	<div id="content" class="site-content">
+<div id="page" class="site page">
+      <!--
+      ========================================================
+      							HEADER
+      ========================================================
+      -->
+      <header>
+      	<div class="container">
+      		<div class="brand">
+      			<?php if (is_front_page() && is_home()){ ?>
+      				<h1 class="brand_name"><?php bloginfo('name'); ?></h1>
+      			<?php } else {?>
+      				<div class="brand_name"><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></div>
+      			<?php } ?>
+      			<p class="brand_slogan">Company</p>
+      		</div>
+      		<a href="callto:#" class="fa-phone">800-2345-6789</a>
+      		<p>One of our representatives will happily contact you within 24 hours. For urgent needs call us at</p>
+      	</div>
+      	<div id="stuck_container" class="stuck_container">
+      		<div class="container">
+      			<nav class="nav">
+      				<ul data-type="navbar" class="sf-menu">
+      					<li class="active"><a href="./">Home</a>
+      					</li>
+      					<li><a href="index-1.html">About</a>
+      						<ul>
+      							<li><a href="#">Lorem ipsum dolor</a></li>
+      							<li><a href="#">Conse ctetur adipisicing</a></li>
+      							<li><a href="#">Elit sed do eiusmod
+      								<ul>
+      									<li><a href="#">Lorem ipsum</a></li>
+      									<li><a href="#">Conse adipisicing</a></li>
+      									<li><a href="#">Sit amet dolore</a></li>
+      								</ul></a></li>
+      								<li><a href="#">Incididunt ut labore</a></li>
+      								<li><a href="#">Et dolore magna</a></li>
+      								<li><a href="#">Ut enim ad minim</a></li>
+      							</ul>
+      						</li>
+      						<li><a href="index-2.html">Services</a>
+      						</li>
+      						<li><a href="index-3.html">FAQS</a>
+      						</li>
+      						<li><a href="index-4.html">Contacts</a>
+      						</li>
+      					</ul>
+      				</nav>
+      			</div>
+      		</div>
+      	</header>
