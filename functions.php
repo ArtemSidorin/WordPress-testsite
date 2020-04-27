@@ -12,6 +12,8 @@ add_filter( 'ot_show_pages', '__return_false' );
  * Required: include OptionTree.
  */
 require( trailingslashit( get_template_directory() ) . 'option-tree/ot-loader.php' );
+require( trailingslashit( get_template_directory() ) . 'functions/theme-options.php');
+require( trailingslashit( get_template_directory() ) . 'functions/meta-boxes.php');
 
 
 
@@ -19,8 +21,6 @@ if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
 	define( '_S_VERSION', '1.0.0' );
 }
-
-if ( ! function_exists( 'artbt_setup' ) ) :
 
 	function artbt_setup() {
 		
@@ -57,16 +57,14 @@ if ( ! function_exists( 'artbt_setup' ) ) :
 		);
 	}
 
-endif;
 add_action( 'after_setup_theme', 'artbt_setup' );
-
 add_action( 'after_setup_theme', 'artbt_content_width', 0 );
 
 
 function artbt_widgets_init() {
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Sidebar', 'artbt' ),
+			'name'          => 'Область виджетов',
 			'id'            => 'sidebar-1',
 			'description'   => esc_html__( 'Add widgets here.', 'artbt' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
