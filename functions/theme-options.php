@@ -41,11 +41,24 @@ function custom_theme_options() {
 		),
 		'sections'        => array(
 			array(
+				'id'    => 'header',
+				'title' => __( 'Шапка' ),
+			),
+			array(
 				'id'    => 'option_types',
 				'title' => __( 'Option Types', 'theme-text-domain' ),
 			),
 		),
 		'settings'        => array(
+			array(
+				'id'           => 'logo_upload',
+				'label'        => __( 'Логотип', 'theme-text-domain' ),
+				'desc'         => 'Загрузка картинки для логотипа',
+				'std'          => '',
+				'type'         => 'upload',
+				'section'      => 'header',
+			),
+				/*Примеры настроек*/
 			array(
 				'id'           => 'demo_background',
 				'label'        => __( 'Background', 'theme-text-domain' ),
