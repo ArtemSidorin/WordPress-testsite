@@ -1,15 +1,3 @@
-<?php
-/**
- * The header for our theme
- *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package Business
- */
-
-?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -23,16 +11,20 @@
 <body <?php body_class(); ?>>
 	<?php wp_body_open(); ?>
 	<div id="page" class="site page">
-      <!--
+    <!--
       ========================================================
       							HEADER
       ========================================================
-  -->
+  	-->
   <header>
   	<div class="container">
   		<div class="brand">
   			<?php if (is_front_page() && is_home()){ ?>
-  				<h1 class="brand_name"><?php bloginfo('name'); ?></h1>
+  				<?php if (ot_get_option( 'logo_upload' )) { ?>
+  					<h1 class="brand_name"><img src="<?php echo ot_get_option( 'logo_upload' ); ?>" alt=""></h1>
+  				<?php } else { ?>
+  					<h1 class="brand_name"><?php bloginfo('name'); ?></h1>
+  				<?php } ?>
   			<?php } else {?>
   				<div class="brand_name"><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></div>
   			<?php } ?>

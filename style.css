@@ -244,7 +244,9 @@ p + .btn_wr {
 .brand a:hover {
   color: inherit;
 }
-
+.brand .brand_name img {
+  max-height: 100px;
+}
 /*==================  Backgrounds  ======================*/
 .bg-primary {
   color: #fff;
