@@ -28,7 +28,9 @@
   			<?php } else {?>
   				<div class="brand_name"><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></div>
   			<?php } ?>
+  			<?php if (ot_get_option('disc_on_off') != 'off') {?>
   			<p class="brand_slogan"><?php bloginfo('description'); ?></p>
+  			<?php } ?>
   		</div>
   		<a href="callto:#" class="fa-phone">800-2345-6789</a>
   		<p>One of our representatives will happily contact you within 24 hours. For urgent needs call us at</p>

@@ -58,6 +58,14 @@ function custom_theme_options() {
 				'type'         => 'upload',
 				'section'      => 'header',
 			),
+						array(
+				'id'           => 'disc_on_off',
+				'label'        => 'Выключение описания сайта',
+				'desc'         => '',
+				'std'          => 'off',
+				'type'         => 'on-off',
+				'section'      => 'header',
+			),
 				/*Примеры настроек*/
 			array(
 				'id'           => 'demo_background',
