@@ -32,8 +32,12 @@
   			<p class="brand_slogan"><?php bloginfo('description'); ?></p>
   			<?php } ?>
   		</div>
-  		<a href="callto:#" class="fa-phone">800-2345-6789</a>
-  		<p>One of our representatives will happily contact you within 24 hours. For urgent needs call us at</p>
+  		<?php if (ot_get_option( 'contact_phone' )) { ?>
+  		<a href="callto:<?php echo str_replace(array(" ", ")", "(", "-"), "", ot_get_option( 'contact_phone' ))?>" class="fa-phone"><?php echo ot_get_option( 'contact_phone'); ?></a>
+  		<?php } ?>
+		<?php if (ot_get_option( 'contact_open' )) { ?>
+  		<p><?php echo ot_get_option( 'contact_open'); ?></p>
+  		<?php } ?>
   	</div>
   	<div id="stuck_container" class="stuck_container">
   		<div class="container">

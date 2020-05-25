@@ -51,6 +51,13 @@ function custom_theme_options() {
 		),
 		'settings'        => array(
 			array(
+				'id'           => 'header_tab',
+				'label'        => 'Основные',
+				'desc'         => '',
+				'type'         => 'tab',
+				'section'      => 'header',
+			),
+			array(
 				'id'           => 'logo_upload',
 				'label'        => __( 'Логотип', 'theme-text-domain' ),
 				'desc'         => 'Загрузка картинки для логотипа',
@@ -58,12 +65,35 @@ function custom_theme_options() {
 				'type'         => 'upload',
 				'section'      => 'header',
 			),
-						array(
+			array(
 				'id'           => 'disc_on_off',
 				'label'        => 'Выключение описания сайта',
 				'desc'         => '',
 				'std'          => 'off',
 				'type'         => 'on-off',
+				'section'      => 'header',
+			),
+			array(
+				'id'           => 'header_contact_tab',
+				'label'        => 'Контакты',
+				'desc'         => '',
+				'type'         => 'tab',
+				'section'      => 'header',
+			),
+			array(
+				'id'           => 'contact_phone',
+				'label'        => 'Телефон',
+				'desc'         => '',
+				'std'          => '',
+				'type'         => 'text',
+				'section'      => 'header',
+			),
+			array(
+				'id'           => 'contact_open',
+				'label'        => 'Часы работы',
+				'desc'         => '',
+				'std'          => '',
+				'type'         => 'text',
 				'section'      => 'header',
 			),
 				/*Примеры настроек*/
